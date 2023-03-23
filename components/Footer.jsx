@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className='footer-container'>
             <p>
-                2022 MSN Headphones All rights reserved
+                2023 MSN Headphones All rights reserved
             </p>
             <p className='icons'>
                 <AiOutlineTwitter />

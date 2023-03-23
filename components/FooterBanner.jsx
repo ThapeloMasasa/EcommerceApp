@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-
+import {useMediaQuery} from '@material-ui/core';
 import { urlFor } from '@/lib/client';
 
 const FooterBanner = ({footerBanner:{discount,largeText1, largeText2,saleTime, desc,smallText, midText, product, buttonText, image}}) => {
+    const displayPic = useMediaQuery('(min-width:600px)');
   return (
     <div className='footer-banner-container'>
         <div className='banner-desc'>
@@ -36,9 +37,17 @@ const FooterBanner = ({footerBanner:{discount,largeText1, largeText2,saleTime, d
                         {buttonText}
                     </button>
                 </Link>
-            </div>          
-                <img src={urlFor(image)}
-                className='footer-banner-image'/>
+            </div> 
+            { displayPic ?(
+                 <img src={urlFor(image)}
+                 className='footer-banner-image'/>
+            
+        ):(
+          <></>
+        )
+
+        }         
+               
         </div>
         </div>
   )
